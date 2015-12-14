@@ -4,6 +4,6 @@ python:
   - "3.4"
   - "3.5"
 script:
-  - py.test --cov-report term-missing --cov opensearch test/
+  - py.test test/
 after_success:
   - coveralls
