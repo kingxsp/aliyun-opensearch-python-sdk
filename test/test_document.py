@@ -18,6 +18,32 @@ def test_app_create():
     time.sleep(5)
 
 
+def test_get_all():
+    client = Client(app_key, app_secret, base_url, lib=client_name)
+    indexApp = IndexApp(client)
+    ret = indexApp.getAll()
+    print(ret)
+    assert ret['status'] == 'OK'
+    print(ret['result'])
+
+
+def test_get_all_page():
+    client = Client(app_key, app_secret, base_url, lib=client_name)
+    indexApp = IndexApp(client)
+    ret = indexApp.getAll(page=1, size=50)
+    print(ret)
+    assert ret['status'] == 'OK'
+    print(ret['result'])
+
+
+def test_status():
+    client = Client(app_key, app_secret, base_url, lib=client_name)
+    indexApp = IndexApp(client)
+    ret = indexApp.status(index_name)
+    assert ret['status'] == 'OK'
+    print(ret['result'])
+
+
 def test_add():
     client = Client(app_key, app_secret, base_url, lib=client_name)
     indexDoc = IndexDoc(client, index_name)
