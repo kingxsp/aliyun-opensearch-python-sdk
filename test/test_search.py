@@ -11,7 +11,7 @@ from config import app_key, app_secret, base_url, build_index_name, client_name
 
 table_name = 'main'
 index_name = build_index_name
-proxy = os.environ.get('HTTP_PROXY')
+proxy = os.environ.get('ALIYUN_HTTP_PROXY')
 
 
 def test_search():
