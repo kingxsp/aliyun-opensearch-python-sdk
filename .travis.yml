@@ -5,8 +5,9 @@ python:
   - "3.5"
 install:
   - pip install pytest
+  - pip install pytest-cov
 script:
   - pwd
-  - py.test test/ --cov-report term-missing --cov=opensearch
+  - py.test run_test.py --cov-report=term-missing --cov=opensearch
 after_success:
   - coveralls
