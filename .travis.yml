@@ -9,5 +9,3 @@ install:
   - pip install python-coveralls
 script:
   - py.test run_test.py --cov-report=term-missing --cov=opensearch
-after_success:
-  - coveralls
