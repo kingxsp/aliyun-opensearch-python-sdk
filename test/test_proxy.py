@@ -3,7 +3,7 @@ import os
 from opensearch import const
 from opensearch import Client
 from opensearch import ErrorLog
-from .config import app_key, app_secret, base_url, build_index_name, client_name
+from config import app_key, app_secret, base_url, build_index_name, client_name
 
 proxy = os.environ.get('HTTP_PROXY')
 index_name = build_index_name

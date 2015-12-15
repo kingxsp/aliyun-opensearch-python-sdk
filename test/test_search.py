@@ -5,7 +5,7 @@ from opensearch import Client
 from opensearch import IndexApp
 from opensearch import Search
 from opensearch import Suggest
-from .config import app_key, app_secret, base_url, build_index_name, client_name
+from config import app_key, app_secret, base_url, build_index_name, client_name
 
 table_name = 'main'
 index_name = build_index_name
@@ -70,9 +70,9 @@ def test_suggest():
     assert len(ret['suggestions']) >= 0
 
 
-def test_rebuild():
-    client = Client(app_key, app_secret, base_url, lib=client_name)
-    indexApp = IndexApp(client)
-    ret = indexApp.rebuild(index_name, 'createtask', table_name=table_name)
-    print(ret)
-    assert ret['status'] == 'OK'
+# def test_rebuild():
+#     client = Client(app_key, app_secret, base_url, lib=client_name)
+#     indexApp = IndexApp(client)
+#     ret = indexApp.rebuild(index_name, 'createtask', table_name=table_name)
+#     print(ret)
+#     assert ret['status'] == 'OK'
