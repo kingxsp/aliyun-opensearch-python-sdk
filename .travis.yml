@@ -5,4 +5,7 @@ install:
   - pip install pytest
   - pip install pytest-cov
 script:
-  - py.test test/ --cov-report=term-missing --cov=opensearch
+  - py.test test/test_const.py
+  - py.test test/test_document.py
+  - py.test test/test_push_doc.py
+  - py.test test/test_search.py
